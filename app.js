@@ -1,4 +1,22 @@
-,
+/* ══════════════════════════════════════════════════
+   منصة التاكسي — طولكرم | app.js
+   Firebase Auth + Realtime Database
+   ══════════════════════════════════════════════════ */
+
+import { initializeApp }          from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+import { getDatabase, ref, set, get, push, onValue, update, remove, off }
+                                   from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged }
+                                   from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+/* ══════════════════════════════════════════════════
+   TENANT MAP  — uid → tenantId
+   ضع هنا الـ UID من Firebase Console
+   ══════════════════════════════════════════════════ */
+const EMAIL_TO_TENANT = {
+  'tk1@taxi.ps':  'tk1',
+  'tk2@taxi.ps':  'tk2',
+  'tk3@taxi.ps':  'tk3',
+  'tk4@taxi.ps':  'tk4',
   'tk5@taxi.ps':  'tk5',
   'tk6@taxi.ps':  'tk6',
   'tk7@taxi.ps':  'tk7',
